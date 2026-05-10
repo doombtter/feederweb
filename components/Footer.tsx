@@ -1,4 +1,5 @@
 import { SITE } from '@/lib/site';
+import { LogoMark } from '@/components/LogoMark';
 
 export function Footer() {
   return (
@@ -6,7 +7,7 @@ export function Footer() {
       <div className="container-page grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
         <div>
           <div className="flex items-center gap-2 font-extrabold tracking-tight text-ink-100">
-            <span aria-hidden className="inline-block h-7 w-7 rounded-full bg-brand-gradient" />
+            <LogoMark size={28} />
             <span className="text-lg">Feeder</span>
           </div>
           <p className="mt-3 text-sm text-ink-300">

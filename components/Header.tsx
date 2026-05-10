@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { LogoMark } from '@/components/LogoMark';
 
 const navItems = [
   { href: '#features', label: '특징' },
@@ -15,7 +16,7 @@ export function Header() {
         className="container-page flex h-16 items-center justify-between"
       >
         <Link href="/" className="flex items-center gap-2 font-extrabold tracking-tight text-ink-100">
-          <span aria-hidden className="inline-block h-7 w-7 rounded-full bg-brand-gradient shadow-glow" />
+          <LogoMark size={28} />
           <span className="text-lg">Feeder</span>
         </Link>
         <ul className="hidden items-center gap-7 text-sm font-medium text-ink-200 sm:flex">

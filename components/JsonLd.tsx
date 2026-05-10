@@ -16,19 +16,16 @@ export function JsonLd() {
     '@context': 'https://schema.org',
     '@type': 'MobileApplication',
     name: 'Feeder',
+    alternateName: '피더',
     operatingSystem: 'iOS, Android',
     applicationCategory: 'SocialNetworkingApplication',
     description: SITE.description,
     url: SITE.url,
+    contentRating: 'Mature 19+',
     offers: {
       '@type': 'Offer',
       price: '0',
       priceCurrency: 'KRW',
-    },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.5',
-      ratingCount: '100',
     },
   };
 

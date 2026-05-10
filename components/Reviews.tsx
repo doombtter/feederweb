@@ -34,7 +34,7 @@ const reviews = [
     initial: 'D',
     nickname: '도윤',
     rating: 5,
-    text: '취향 기반 추천이 잘 맞아요. 처음 보는 사람과도 어색함이 빨리 풀려요.',
+    text: '시크릿 사진은 한 번만 보이는 게 진짜 신선해요. 사진 흘러갈 걱정 없이 가볍게 주고받게 돼요.',
     source: '베타테스터 후기',
     color: 'from-brand-500 to-accent-400',
   },

@@ -56,8 +56,9 @@ const config: Config = {
       },
       backgroundImage: {
         'brand-gradient': 'linear-gradient(135deg, #8B5CF6 0%, #A855F7 100%)',
+        'logo-gradient': 'linear-gradient(135deg, #8B5CF6 0%, #EC4899 100%)',
         'hero-radial':
-          'radial-gradient(circle at 20% 10%, rgba(139,92,246,0.25), transparent 45%), radial-gradient(circle at 85% 30%, rgba(251,113,133,0.15), transparent 45%)',
+          'radial-gradient(circle at 20% 10%, rgba(139,92,246,0.25), transparent 45%), radial-gradient(circle at 85% 30%, rgba(236,72,153,0.18), transparent 45%)',
       },
       keyframes: {
         floaty: {
