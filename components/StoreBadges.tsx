@@ -1,31 +1,16 @@
 'use client';
 
 import { Apple, Play } from 'lucide-react';
-import { SITE, STORE_RELEASED } from '@/lib/site';
+import { SITE } from '@/lib/site';
 import { events } from '@/lib/analytics';
 
 type Variant = 'default' | 'light';
 
 export function StoreBadges({ variant = 'default' }: { variant?: Variant }) {
-  if (!STORE_RELEASED) {
-    return (
-      <div
-        role="status"
-        className={`inline-flex items-center gap-2 rounded-full border px-5 py-3 text-sm font-medium ${
-          variant === 'light'
-            ? 'border-white/30 bg-white/10 text-white'
-            : 'border-ink-100 bg-white text-ink-700'
-        }`}
-      >
-        앱 출시 준비 중 · 곧 만나요!
-      </div>
-    );
-  }
-
   const baseLight =
     'inline-flex items-center gap-3 rounded-2xl border border-white/30 bg-white/10 px-5 py-3 text-white backdrop-blur transition hover:bg-white/20';
   const baseDark =
-    'inline-flex items-center gap-3 rounded-2xl bg-ink-900 px-5 py-3 text-white transition hover:bg-ink-700';
+    'inline-flex items-center gap-3 rounded-2xl border border-ink-600 bg-ink-800 px-5 py-3 text-ink-100 transition hover:bg-ink-700';
   const className = variant === 'light' ? baseLight : baseDark;
 
   return (
@@ -34,7 +19,7 @@ export function StoreBadges({ variant = 'default' }: { variant?: Variant }) {
         href={SITE.iosUrl}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="App Store에서 Feeder 다운로드"
+        aria-label="App Store에서 피더(Feeder) 다운로드"
         onClick={() => events.downloadClick('ios')}
         className={className}
       >
@@ -48,7 +33,7 @@ export function StoreBadges({ variant = 'default' }: { variant?: Variant }) {
         href={SITE.androidUrl}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Google Play에서 Feeder 다운로드"
+        aria-label="Google Play에서 피더(Feeder) 다운로드"
         onClick={() => events.downloadClick('android')}
         className={className}
       >

@@ -10,7 +10,7 @@ const reviews = [
     initial: 'S',
     nickname: '서연',
     rating: 5,
-    text: '랜덤채팅 앱은 무서웠는데 Feeder는 분위기가 정말 가벼워요. 취향 비슷한 친구를 만나서 매일 켜요!',
+    text: '피드가 가벼워서 부담 없이 보게 돼요. 음성 메시지로 대화하니까 글보다 훨씬 친해지는 느낌!',
     source: '베타테스터 후기',
     color: 'from-brand-400 to-brand-600',
   },
@@ -18,23 +18,23 @@ const reviews = [
     initial: 'J',
     nickname: '준호',
     rating: 5,
-    text: '익명채팅인데도 부담스럽지 않아서 좋아요. 신고 기능이 빠르게 작동하니까 안심하고 쓸 수 있어요.',
+    text: '랜덤 통화 기능이 진짜 좋아요. 글로 어색할 때 목소리로 풀리니까 새친구 만들기 쉬워졌어요.',
     source: '베타테스터 후기',
-    color: 'from-accent-400 to-accent-600',
+    color: 'from-sky-400 to-brand-500',
   },
   {
     initial: 'M',
     nickname: '민지',
     rating: 4,
-    text: '랜챗 앱 중에 디자인이 제일 귀엽고 직관적이에요. 닉네임만 만들고 바로 대화할 수 있어서 편해요.',
+    text: '익명채팅인데 다크 모드 디자인이 깔끔하고 분위기 있어요. 신고 기능도 빠르게 작동해서 안심.',
     source: '베타테스터 후기',
-    color: 'from-brand-300 to-accent-500',
+    color: 'from-accent-500 to-brand-400',
   },
   {
     initial: 'D',
     nickname: '도윤',
     rating: 5,
-    text: '관심사 기반 매칭이 진짜 좋아요. 처음 보는 사람과도 어색함이 빨리 풀려요.',
+    text: '취향 기반 추천이 잘 맞아요. 처음 보는 사람과도 어색함이 빨리 풀려요.',
     source: '베타테스터 후기',
     color: 'from-brand-500 to-accent-400',
   },
@@ -42,17 +42,17 @@ const reviews = [
     initial: 'H',
     nickname: '하은',
     rating: 4,
-    text: '새친구 만들기 앱 여러 개 써봤는데, Feeder가 제일 건전한 분위기에요. 추천!',
+    text: '24시간 샷이 부담 없어서 좋아요. 프로필 다 보여주지 않고도 분위기가 통해요.',
     source: '베타테스터 후기',
-    color: 'from-accent-500 to-brand-400',
+    color: 'from-brand-400 to-sky-400',
   },
   {
     initial: 'Y',
     nickname: '윤서',
     rating: 5,
-    text: '익명소셜인데도 따뜻한 대화가 많아서 의외였어요. 가볍게 켜놓기 좋은 앱.',
+    text: '익명소셜인데 따뜻한 대화가 많아서 의외였어요. 가볍게 켜놓기 좋은 앱.',
     source: '베타테스터 후기',
-    color: 'from-brand-400 to-accent-500',
+    color: 'from-brand-500 to-accent-500',
   },
 ];
 
@@ -62,7 +62,7 @@ function Stars({ rating }: { rating: number }) {
       {Array.from({ length: 5 }).map((_, i) => (
         <Star
           key={i}
-          className={`h-4 w-4 ${i < rating ? 'fill-brand-400 text-brand-400' : 'text-ink-300'}`}
+          className={`h-4 w-4 ${i < rating ? 'fill-brand-400 text-brand-400' : 'text-ink-500'}`}
           aria-hidden
         />
       ))}
@@ -72,7 +72,7 @@ function Stars({ rating }: { rating: number }) {
 
 export function Reviews() {
   return (
-    <section id="reviews" className="section bg-ink-100/50">
+    <section id="reviews" className="section bg-ink-900">
       <div className="container-page">
         <div className="mx-auto max-w-2xl text-center">
           <p className="h-eyebrow">사용자 후기</p>
@@ -89,7 +89,7 @@ export function Reviews() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-80px' }}
               transition={{ duration: 0.4, delay: i * 0.05 }}
-              className="rounded-2xl bg-white p-6 shadow-card"
+              className="surface-card p-6"
             >
               <div className="flex items-center gap-3">
                 <div
@@ -99,12 +99,12 @@ export function Reviews() {
                   {r.initial}
                 </div>
                 <div>
-                  <p className="text-sm font-semibold text-ink-900">{r.nickname}</p>
+                  <p className="text-sm font-semibold text-ink-100">{r.nickname}</p>
                   <Stars rating={r.rating} />
                 </div>
               </div>
-              <p className="mt-4 text-sm leading-relaxed text-ink-700">“{r.text}”</p>
-              <p className="mt-3 text-xs text-ink-300">{r.source}</p>
+              <p className="mt-4 text-sm leading-relaxed text-ink-200">“{r.text}”</p>
+              <p className="mt-3 text-xs text-ink-400">{r.source}</p>
             </motion.li>
           ))}
         </ul>

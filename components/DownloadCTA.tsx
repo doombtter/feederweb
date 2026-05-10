@@ -6,14 +6,14 @@ import { StoreBadges } from '@/components/StoreBadges';
 
 export function DownloadCTA() {
   return (
-    <section id="download" className="section">
+    <section id="download" className="section bg-ink-950">
       <div className="container-page">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.5 }}
-          className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-brand-500 via-brand-400 to-accent-500 px-8 py-14 text-white shadow-soft sm:px-14"
+          className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-brand-600 via-brand-500 to-accent-500 px-8 py-14 text-white shadow-glow sm:px-14"
         >
           <div
             aria-hidden
@@ -30,7 +30,7 @@ export function DownloadCTA() {
                 지금 바로 시작해보세요
               </h2>
               <p className="mt-4 max-w-xl text-base text-white/90 sm:text-lg">
-                무료 다운로드로 가벼운 익명소셜의 매력을 만나보세요. 안전한 환경에서, 통하는 친구와.
+                무료 다운로드. 익명 피드부터 랜덤 통화까지, 가벼운 익명소셜의 매력을 만나보세요.
               </p>
               <div className="mt-7">
                 <StoreBadges variant="light" />
@@ -42,7 +42,7 @@ export function DownloadCTA() {
                 className="mx-auto flex h-44 w-44 flex-col items-center justify-center rounded-2xl bg-white/15 text-center text-xs text-white/90 backdrop-blur"
               >
                 <QrCode className="h-16 w-16" aria-hidden />
-                <span className="mt-2">QR 코드<br />출시 후 제공</span>
+                <span className="mt-2">App Store · Play Store<br />검색: 피더</span>
               </div>
             </div>
           </div>

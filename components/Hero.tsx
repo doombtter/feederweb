@@ -8,14 +8,11 @@ import { events } from '@/lib/analytics';
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden">
+    <section className="relative overflow-hidden bg-ink-950">
+      <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 bg-hero-radial" />
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-b from-brand-50 via-white to-white"
-      />
-      <div
-        aria-hidden
-        className="pointer-events-none absolute -top-32 left-1/2 -z-10 h-[480px] w-[640px] -translate-x-1/2 rounded-full bg-brand-200/40 blur-3xl"
+        className="pointer-events-none absolute -top-40 left-1/2 -z-10 h-[520px] w-[720px] -translate-x-1/2 rounded-full bg-brand-500/20 blur-3xl"
       />
       <div className="container-page grid items-center gap-12 py-20 sm:py-24 lg:grid-cols-12 lg:gap-8">
         <motion.div
@@ -24,39 +21,39 @@ export function Hero() {
           transition={{ duration: 0.6, ease: 'easeOut' }}
           className="lg:col-span-7"
         >
-          <p className="h-eyebrow">랜챗 · 랜덤채팅 · 익명소셜</p>
+          <p className="h-eyebrow">랜덤채팅 · 익명소셜 · 랜덤통화</p>
           <h1 className="h-display mt-3">
             오늘, 새로운 친구를 만나는
             <br />
-            <span className="bg-gradient-to-r from-brand-500 to-accent-500 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-brand-400 via-brand-500 to-accent-500 bg-clip-text text-transparent">
               가장 가벼운 방법
             </span>
           </h1>
           <p className="text-body mt-6 max-w-xl">
-            부담 없이 시작하는 랜덤 친구 만들기, <strong className="text-ink-900">Feeder</strong>.
-            전화번호 없이 닉네임 하나로, 취향이 맞는 사람과 자연스럽게 대화해보세요.
+            <strong className="text-ink-100">피더(Feeder)</strong>는 익명 피드와 랜덤 매칭으로 통하는 사람을 만나는
+            새로운 익명소셜 앱입니다. 닉네임 하나로 시작해, 음성·영상·랜덤통화까지 가볍게.
           </p>
           <div className="mt-8 flex flex-col gap-4">
             <StoreBadges />
             <a
               href="#how"
               onClick={() => events.ctaHeroClick()}
-              className="inline-flex items-center gap-2 self-start text-sm font-semibold text-ink-700 hover:text-ink-900"
+              className="inline-flex items-center gap-2 self-start text-sm font-semibold text-ink-200 hover:text-ink-100"
             >
               어떻게 시작하나요? <ArrowDown className="h-4 w-4" aria-hidden />
             </a>
           </div>
-          <dl className="mt-10 flex flex-wrap gap-6 text-sm text-ink-500">
+          <dl className="mt-10 flex flex-wrap gap-6 text-sm text-ink-300">
             <div>
-              <dt className="font-semibold text-ink-900">100% 무료</dt>
-              <dd>다운로드 · 매칭 · 대화 모두 무료</dd>
-            </div>
-            <div>
-              <dt className="font-semibold text-ink-900">전화번호 불필요</dt>
+              <dt className="font-semibold text-ink-100">전화번호 불필요</dt>
               <dd>닉네임 하나로 즉시 시작</dd>
             </div>
             <div>
-              <dt className="font-semibold text-ink-900">안전한 환경</dt>
+              <dt className="font-semibold text-ink-100">음성 · 영상</dt>
+              <dd>채팅 · 랜덤통화 · 24시간 샷</dd>
+            </div>
+            <div>
+              <dt className="font-semibold text-ink-100">안전한 환경</dt>
               <dd>신고/차단 즉시 반영</dd>
             </div>
           </dl>
@@ -68,7 +65,7 @@ export function Hero() {
           className="lg:col-span-5"
         >
           <div className="animate-floaty">
-            <PhoneMock />
+            <PhoneMock variant="feed" />
           </div>
         </motion.div>
       </div>
