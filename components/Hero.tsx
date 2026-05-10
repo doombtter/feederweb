@@ -30,8 +30,8 @@ export function Hero() {
             </span>
           </h1>
           <p className="text-body mt-6 max-w-xl">
-            <strong className="text-ink-100">피더(Feeder)</strong>는 익명 피드와 랜덤 매칭으로 통하는 사람을 만나는
-            새로운 익명소셜 앱입니다. 닉네임 하나로 시작해, 음성·영상·랜덤통화까지 가볍게.
+            <strong className="text-ink-100">피더(Feeder)</strong>는 100% 익명으로 운영되는 새로운 익명소셜 앱입니다.
+            짧은 글, 1회만 보이는 시크릿 사진/영상, 음성·영상 채팅, 그리고 최대 10분 랜덤 통화까지 가볍게.
           </p>
           <div className="mt-8 flex flex-col gap-4">
             <StoreBadges />
@@ -45,16 +45,16 @@ export function Hero() {
           </div>
           <dl className="mt-10 flex flex-wrap gap-6 text-sm text-ink-300">
             <div>
-              <dt className="font-semibold text-ink-100">전화번호 불필요</dt>
-              <dd>닉네임 하나로 즉시 시작</dd>
+              <dt className="font-semibold text-ink-100">100% 익명</dt>
+              <dd>닉네임은 매칭과 무관</dd>
             </div>
             <div>
               <dt className="font-semibold text-ink-100">음성 · 영상</dt>
-              <dd>채팅 · 랜덤통화 · 24시간 샷</dd>
+              <dd>채팅 · 랜덤통화(최대 10분) · 24시간 샷</dd>
             </div>
             <div>
               <dt className="font-semibold text-ink-100">안전한 환경</dt>
-              <dd>신고/차단 즉시 반영</dd>
+              <dd>전화번호 인증 · 만 19세 이상</dd>
             </div>
           </dl>
         </motion.div>

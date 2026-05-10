@@ -1,23 +1,28 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { LayoutGrid, Phone, Mic, Clock, ShieldCheck, Sparkles } from 'lucide-react';
+import { Pencil, Phone, Mic, Clock, EyeOff, ShieldCheck } from 'lucide-react';
 
 const features = [
   {
-    icon: LayoutGrid,
-    title: '익명 피드',
-    desc: '취향이 묻어나는 짧은 글·사진·음성·영상으로, 부담 없이 나를 표현하고 통하는 사람을 만나요.',
+    icon: Pencil,
+    title: '익명 글 피드',
+    desc: '실명도 프로필 사진도 없이, 글 한 줄로 시작하는 100% 익명소셜. 부담 없이 생각을 적고 댓글로 통해보세요.',
   },
   {
     icon: Phone,
-    title: '랜덤 통화',
-    desc: '버튼 한 번으로 시작되는 1:1 음성 매칭. 글로는 표현 못 하는 분위기, 목소리로 가볍게 나눠보세요.',
+    title: '랜덤 통화 (최대 10분)',
+    desc: '버튼 한 번으로 시작되는 1:1 음성 매칭. 하루 무료 횟수가 제공되며, 글로는 표현 못 하는 분위기를 목소리로 나눠요.',
   },
   {
     icon: Mic,
     title: '음성 · 영상 채팅',
-    desc: '텍스트만으로는 부족할 때, 음성 메시지와 영상 통화로 더 진짜 같은 익명채팅을 즐겨요.',
+    desc: '텍스트만으로 부족할 때, 음성 메시지와 영상 통화로 더 진짜 같은 익명채팅을 즐길 수 있어요.',
+  },
+  {
+    icon: EyeOff,
+    title: '1회 시크릿 사진 / 영상',
+    desc: '딱 한 번만 열어볼 수 있는 시크릿 사진·영상. 캡처 알림과 자동 만료로 사진이 흘러갈 걱정 없이 가볍게 공유.',
   },
   {
     icon: Clock,
@@ -25,14 +30,9 @@ const features = [
     desc: '오늘만 보여주고 싶은 순간은 샷으로. 24시간 뒤 자동으로 사라져 부담 없이 일상을 공유해요.',
   },
   {
-    icon: Sparkles,
-    title: '취향 기반 매칭',
-    desc: '관심사·분위기가 비슷한 사람을 우선 추천. 단순 랜덤채팅이 아닌, 통하는 사람과의 랜덤매칭.',
-  },
-  {
     icon: ShieldCheck,
     title: '안전한 대화 환경',
-    desc: '신고/차단 즉시 반영, 청소년 보호 정책과 자동 필터링으로 건전한 익명소셜을 지향합니다.',
+    desc: '전화번호 인증 + 만 19세 이상 이용, 신고/차단 즉시 반영, 자동 필터링으로 건전한 익명소셜을 지향합니다.',
   },
 ];
 

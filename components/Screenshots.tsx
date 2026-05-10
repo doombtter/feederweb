@@ -4,8 +4,8 @@ import { motion } from 'framer-motion';
 import { PhoneMock } from '@/components/PhoneMock';
 
 const shots = [
-  { caption: '익명 피드에서 통하는 사람 발견', variant: 'feed' as const },
-  { caption: '목소리로 만나는 1:1 랜덤 통화', variant: 'call' as const },
+  { caption: '글로 시작하는 100% 익명 피드', variant: 'feed' as const },
+  { caption: '최대 10분 1:1 랜덤 통화', variant: 'call' as const },
   { caption: '음성·영상까지 더해진 익명채팅', variant: 'chat' as const },
 ];
 

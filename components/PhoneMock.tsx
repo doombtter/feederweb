@@ -1,4 +1,4 @@
-import { Sparkles, Mic, Phone, Heart } from 'lucide-react';
+import { Sparkles, Mic, Phone, MessageCircle, Heart, EyeOff } from 'lucide-react';
 
 export function PhoneMock({ caption, variant = 'feed' }: { caption?: string; variant?: 'feed' | 'call' | 'chat' }) {
   return (
@@ -36,52 +36,79 @@ export function PhoneMock({ caption, variant = 'feed' }: { caption?: string; var
 }
 
 function FeedScreen() {
+  const posts = [
+    {
+      text: '오늘 비 오는데 어울리는 노래 추천 받아요 🎧',
+      meta: '익명 · 1분 전',
+      likes: 12,
+      replies: 4,
+      hue: 'from-brand-400 to-accent-500',
+      hasSecret: false,
+    },
+    {
+      text: '시크릿으로만 보여드릴게요. 한 번만 열어보기 ↓',
+      meta: '익명 · 6분 전',
+      likes: 28,
+      replies: 9,
+      hue: 'from-sky-400 to-brand-500',
+      hasSecret: true,
+    },
+    {
+      text: '퇴근하고 산책 같이 글로 떠들 사람',
+      meta: '익명 · 12분 전',
+      likes: 7,
+      replies: 2,
+      hue: 'from-brand-500 to-accent-400',
+      hasSecret: false,
+    },
+  ];
   return (
     <>
       <div className="relative px-5 pt-6">
         <div className="flex items-center gap-2 text-xs font-semibold text-brand-400">
           <Sparkles className="h-4 w-4" aria-hidden />
-          오늘의 피드
+          오늘의 글
         </div>
         <h3 className="mt-2 text-lg font-bold leading-snug text-ink-100">
-          익명으로 솔직하게,
+          이름도 얼굴도 없이,
           <br />
-          가볍게 연결되기
+          글로 연결되기
         </h3>
       </div>
-      <div className="relative mt-5 space-y-3 px-5">
-        {[
-          { name: '서연', tag: '음악 · 산책', color: 'from-brand-400 to-brand-600' },
-          { name: '하준', tag: '게임 · 영화', color: 'from-sky-400 to-brand-500' },
-          { name: '지유', tag: '카페 · 독서', color: 'from-accent-500 to-brand-500' },
-        ].map((p) => (
+      <div className="relative mt-4 space-y-2.5 px-5">
+        {posts.map((p, i) => (
           <div
-            key={p.name}
-            className="flex items-center gap-3 rounded-2xl border border-ink-600 bg-ink-800/80 p-3 shadow-card backdrop-blur"
+            key={i}
+            className="rounded-2xl border border-ink-600 bg-ink-800/80 p-3 shadow-card backdrop-blur"
           >
-            <div
-              className={`flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br ${p.color} text-sm font-bold text-white`}
-              aria-hidden
-            >
-              {p.name[0]}
+            <div className="flex items-center gap-2">
+              <div
+                className={`h-7 w-7 rounded-full bg-gradient-to-br ${p.hue}`}
+                aria-hidden
+              />
+              <span className="text-[10px] text-ink-400">{p.meta}</span>
             </div>
-            <div className="flex-1">
-              <p className="text-sm font-semibold text-ink-100">{p.name}</p>
-              <p className="text-xs text-ink-300">{p.tag}</p>
+            <p className="mt-2 text-xs leading-snug text-ink-100">{p.text}</p>
+            {p.hasSecret ? (
+              <div className="mt-2 flex items-center gap-2 rounded-lg border border-brand-500/40 bg-brand-500/10 px-2 py-1.5 text-[10px] font-semibold text-brand-300">
+                <EyeOff className="h-3 w-3" aria-hidden />
+                시크릿 사진 · 1회만 열람
+              </div>
+            ) : null}
+            <div className="mt-2 flex items-center gap-3 text-[10px] text-ink-300">
+              <span className="inline-flex items-center gap-1">
+                <Heart className="h-3 w-3" aria-hidden /> {p.likes}
+              </span>
+              <span className="inline-flex items-center gap-1">
+                <MessageCircle className="h-3 w-3" aria-hidden /> {p.replies}
+              </span>
             </div>
-            <button
-              type="button"
-              className="rounded-full bg-brand-gradient p-2 text-white shadow-glow"
-              aria-label={`${p.name}에게 메시지 보내기`}
-            >
-              <Heart className="h-4 w-4" aria-hidden />
-            </button>
           </div>
         ))}
       </div>
       <div className="absolute bottom-6 left-1/2 flex -translate-x-1/2 items-center gap-2 rounded-full bg-brand-gradient px-5 py-3 text-sm font-semibold text-white shadow-glow">
         <Sparkles className="h-4 w-4" aria-hidden />
-        매칭 시작하기
+        익명으로 글쓰기
       </div>
     </>
   );
@@ -101,7 +128,7 @@ function CallScreen() {
           랜덤 통화 매칭 중
         </p>
         <p className="mt-2 text-lg font-bold text-ink-100">목소리만으로 통하는 친구</p>
-        <p className="mt-1 text-xs text-ink-300">최대 3분 · 30 포인트</p>
+        <p className="mt-1 text-xs text-ink-300">최대 10분 · 하루 무료 횟수 제공</p>
       </div>
       <div className="absolute bottom-6 left-1/2 flex -translate-x-1/2 items-center gap-3">
         <button
@@ -125,20 +152,21 @@ function CallScreen() {
 
 function ChatScreen() {
   const messages = [
-    { who: 'them', text: '안녕! 프로필 보고 말 걸어봤어요 😄', time: '오후 9:14' },
-    { who: 'me', text: '저도 반가워요. 음악 좋아하시는 거 같던데?', time: '오후 9:15' },
+    { who: 'them', text: '안녕하세요! 글 보고 말 걸어봤어요 😄', time: '오후 9:14' },
+    { who: 'me', text: '반가워요. 음악 좋아하시는 거 같던데?', time: '오후 9:15' },
     { who: 'them', text: '네! 요즘 시티팝 자주 들어요', time: '오후 9:15' },
   ];
   return (
     <>
       <div className="relative px-5 pt-6">
         <div className="flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-brand-400 to-accent-500 text-sm font-bold text-white">
-            S
-          </div>
+          <div
+            className="h-10 w-10 rounded-full bg-gradient-to-br from-brand-400 to-accent-500"
+            aria-hidden
+          />
           <div>
-            <p className="text-sm font-semibold text-ink-100">서연</p>
-            <p className="text-xs text-brand-400">● 온라인</p>
+            <p className="text-sm font-semibold text-ink-100">익명 사용자</p>
+            <p className="text-xs text-brand-400">● 온라인 · 100% 익명</p>
           </div>
         </div>
       </div>
