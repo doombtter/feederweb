@@ -106,7 +106,7 @@ function FeedScreen() {
           </div>
         ))}
       </div>
-      <div className="absolute bottom-6 left-1/2 flex -translate-x-1/2 items-center gap-2 rounded-full bg-brand-gradient px-5 py-3 text-sm font-semibold text-white shadow-glow">
+      <div className="absolute bottom-6 left-1/2 flex -translate-x-1/2 items-center gap-2 whitespace-nowrap rounded-full bg-brand-gradient px-5 py-3 text-sm font-semibold text-white shadow-glow">
         <Sparkles className="h-4 w-4" aria-hidden />
         익명으로 글쓰기
       </div>
