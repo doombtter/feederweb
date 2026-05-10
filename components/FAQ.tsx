@@ -7,7 +7,7 @@ import { faqItems, type FaqItem } from '@/lib/faq';
 
 function FAQRow({ item, open, onToggle }: { item: FaqItem; open: boolean; onToggle: () => void }) {
   return (
-    <li className="border-b border-ink-100">
+    <li className="border-b border-ink-600">
       <button
         type="button"
         aria-expanded={open}
@@ -16,9 +16,9 @@ function FAQRow({ item, open, onToggle }: { item: FaqItem; open: boolean; onTogg
         onClick={onToggle}
         className="flex w-full items-center justify-between gap-4 py-5 text-left"
       >
-        <span className="text-base font-semibold text-ink-900 sm:text-lg">{item.question}</span>
+        <span className="text-base font-semibold text-ink-100 sm:text-lg">{item.question}</span>
         <ChevronDown
-          className={`h-5 w-5 shrink-0 text-ink-500 transition-transform ${open ? 'rotate-180' : ''}`}
+          className={`h-5 w-5 shrink-0 text-ink-300 transition-transform ${open ? 'rotate-180 text-brand-400' : ''}`}
           aria-hidden
         />
       </button>
@@ -29,7 +29,7 @@ function FAQRow({ item, open, onToggle }: { item: FaqItem; open: boolean; onTogg
         className={`grid overflow-hidden transition-all ${open ? 'grid-rows-[1fr] pb-5' : 'grid-rows-[0fr]'}`}
       >
         <div className="min-h-0">
-          <p className="text-sm leading-relaxed text-ink-500 sm:text-base">{item.answer}</p>
+          <p className="text-sm leading-relaxed text-ink-200 sm:text-base">{item.answer}</p>
         </div>
       </div>
     </li>
@@ -48,7 +48,7 @@ export function FAQ() {
   };
 
   return (
-    <section id="faq" className="section">
+    <section id="faq" className="section bg-ink-950">
       <div className="container-page">
         <div className="mx-auto max-w-2xl text-center">
           <p className="h-eyebrow">FAQ</p>
