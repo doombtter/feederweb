@@ -46,6 +46,11 @@ export const metadata: Metadata = {
   alternates: { canonical: SITE.url },
   robots: { index: true, follow: true },
   category: 'Social',
+  verification: {
+    other: {
+      'naver-site-verification': '8155ecbc4af00fe23d4eea5363f582fafc6a1b52',
+    },
+  },
 };
 
 export const viewport: Viewport = {
