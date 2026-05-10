@@ -1,4 +1,4 @@
-import { Sparkles, Mic, Phone, MessageCircle, Heart, EyeOff } from 'lucide-react';
+import { Sparkles, Mic, Phone, MessageCircle, Heart } from 'lucide-react';
 
 export function PhoneMock({ caption, variant = 'feed' }: { caption?: string; variant?: 'feed' | 'call' | 'chat' }) {
   return (
@@ -43,15 +43,13 @@ function FeedScreen() {
       likes: 12,
       replies: 4,
       hue: 'from-brand-400 to-accent-500',
-      hasSecret: false,
     },
     {
-      text: '시크릿으로만 보여드릴게요. 한 번만 열어보기 ↓',
+      text: '카페에서 멍 때리고 있는데 댓글로 같이 떠들 사람',
       meta: '익명 · 6분 전',
       likes: 28,
       replies: 9,
       hue: 'from-sky-400 to-brand-500',
-      hasSecret: true,
     },
     {
       text: '퇴근하고 산책 같이 글로 떠들 사람',
@@ -59,7 +57,6 @@ function FeedScreen() {
       likes: 7,
       replies: 2,
       hue: 'from-brand-500 to-accent-400',
-      hasSecret: false,
     },
   ];
   return (
@@ -89,12 +86,6 @@ function FeedScreen() {
               <span className="text-[10px] text-ink-400">{p.meta}</span>
             </div>
             <p className="mt-2 text-xs leading-snug text-ink-100">{p.text}</p>
-            {p.hasSecret ? (
-              <div className="mt-2 flex items-center gap-2 rounded-lg border border-brand-500/40 bg-brand-500/10 px-2 py-1.5 text-[10px] font-semibold text-brand-300">
-                <EyeOff className="h-3 w-3" aria-hidden />
-                시크릿 사진 · 1회만 열람
-              </div>
-            ) : null}
             <div className="mt-2 flex items-center gap-3 text-[10px] text-ink-300">
               <span className="inline-flex items-center gap-1">
                 <Heart className="h-3 w-3" aria-hidden /> {p.likes}
@@ -128,7 +119,7 @@ function CallScreen() {
           랜덤 통화 매칭 중
         </p>
         <p className="mt-2 text-lg font-bold text-ink-100">목소리만으로 통하는 친구</p>
-        <p className="mt-1 text-xs text-ink-300">최대 10분 · 하루 무료 횟수 제공</p>
+        <p className="mt-1 text-xs text-ink-300">하루 무료 횟수 제공</p>
       </div>
       <div className="absolute bottom-6 left-1/2 flex -translate-x-1/2 items-center gap-3">
         <button

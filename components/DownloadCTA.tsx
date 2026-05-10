@@ -30,7 +30,7 @@ export function DownloadCTA() {
                 지금 바로 시작해보세요
               </h2>
               <p className="mt-4 max-w-xl text-base text-white/90 sm:text-lg">
-                무료 다운로드. 100% 익명 글 피드, 1회 시크릿, 최대 10분 랜덤 통화까지 가볍게 만나보세요.
+                무료 다운로드. 100% 익명 글 피드, 1회 시크릿, 1:1 랜덤 통화까지 가볍게 만나보세요.
               </p>
               <p className="mt-2 text-xs text-white/70">만 19세 이상 이용 가능 · 전화번호 본인 인증</p>
               <div className="mt-7">
