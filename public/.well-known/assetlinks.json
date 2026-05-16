@@ -1,0 +1,15 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls",
+      "delegate_permission/common.get_login_creds"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.feeder.feeder",
+      "sha256_cert_fingerprints": [
+        "4B:76:5E:9F:8F:42:2F:BA:20:1D:13:12:FD:0B:A3:D4:A3:2B:A0:BD:28:51:81:A3:04:EB:7C:93:24:38:CC:6F"
+      ]
+    }
+  }
+]
